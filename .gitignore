@@ -1,0 +1,3 @@
+# Project exclude paths
+/SpringBoot-i18n/target/
+/SpringBoot-Validated/target/
