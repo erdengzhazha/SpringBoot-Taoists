@@ -1,29 +1,34 @@
 package com.ovopark.tao.valid.entity;
-
+import com.ovopark.tao.valid.validate.Insert;
+import com.ovopark.tao.valid.validate.Update;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.io.Serializable;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   /**
    * 用户id
    */
-  @NotNull(message = "用户id不能为空!")
+  @NotNull(message = "用户id不能为空!" , groups = {Insert.class})
   private Long userId;
 
   /**
    * 用户名
    */
-  @NotBlank(message = "用户名不能为空!")
+  @NotBlank(message = "用户名不能为空!" ,groups = {Insert.class,Update.class})
   @Length(max = 20, min = 3, message = "用户名必须在 3～20 字符之间!")
   private String username;
 
@@ -60,4 +65,6 @@ public class User {
   @Email(message = "邮箱格式错误！")
   private String email;
 
+  @Valid
+  private Dog dog;
 }
