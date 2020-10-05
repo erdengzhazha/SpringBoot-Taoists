@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @RestController
 @Slf4j
-@Validated
+@Validated //此注释是在入参校验时才要加的
 public class UserController {
 
   /**
@@ -25,7 +25,7 @@ public class UserController {
   }
 
   /**
-   * 入参校验时，Controller上面要加: @Validated
+   * 注意：入参校验时，Controller上面要加: @Validated
    * TODO (@RequestParam方式绑定参数)
    * @param id
    * @param name
