@@ -2,7 +2,7 @@
 ### 目的:在controller层便携的参数校验
 本项目SpringBoot v 2.2.10  
 注意: 从SpringBoot v 2.3 之前都是自带validated jar 包  
-本项目使用了LomBok插件，安装步骤1.idea下载插件 ，2.倒入LomBok的jar包
+本项目使用了LomBok插件，安装步骤1.idea下载插件 ，2.导入LomBok的jar包
 # 校验核心步骤
 1.创建POJO对象  
 2.给POJO属性加上校验注解  
