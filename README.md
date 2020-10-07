@@ -5,8 +5,9 @@
 |---SpringBoot-Taoists 道长  
 &nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-i18n 国际化  
 &nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-MyBatisPlus 数据库连接  
-&nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-RabbitMq MQ工具  
-&nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-Validated 校验   
+&nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-RabbitMq MQ工具(外卖系统Demo)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---order-server-manager 订单服务port:3001  
+&nbsp;&nbsp;&nbsp;&nbsp;|---SpringBoot-Validated 校验port:2024  
 
 持续输出中。。。
 
