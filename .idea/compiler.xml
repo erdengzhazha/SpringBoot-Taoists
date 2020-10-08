@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringBoot-Validated" />
         <module name="SpringBoot-MyBatisPlus" />
         <module name="order-server-manager" />
         <module name="SpringBoot-i18n" />
+        <module name="SpringBoot-Validated" />
       </profile>
     </annotationProcessing>
   </component>
