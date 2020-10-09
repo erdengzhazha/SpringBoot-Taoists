@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBoot-MyBatisPlus" />
-        <module name="order-server-manager" />
         <module name="SpringBoot-i18n" />
+        <module name="common" />
+        <module name="deliveryman-server-manager" />
+        <module name="order-server-manager" />
         <module name="SpringBoot-Validated" />
       </profile>
     </annotationProcessing>
@@ -20,6 +22,8 @@
       <module name="SpringBoot-RabbitMq" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="deliveryman-server-manager" options="-parameters" />
       <module name="order-server-manager" options="-parameters" />
     </option>
   </component>

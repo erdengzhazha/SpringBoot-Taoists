@@ -1,6 +1,7 @@
 package com.ovopark.tao.rabbitmq.orderserver.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
 import com.ovopark.tao.rabbitmq.orderserver.entity.dto.OrderMessageDTO;
 import com.ovopark.tao.rabbitmq.orderserver.entity.enummeration.OrderStatusEnum;
 import com.ovopark.tao.rabbitmq.orderserver.entity.po.OrderDetailPO;
@@ -26,7 +27,7 @@ public class OrderMessageService {
    */
   public void handleMessage() throws IOException, TimeoutException {
     ConnectionFactory connectionFactory = new ConnectionFactory();
-    connectionFactory.setHost("49.233.5.107");
+    connectionFactory.setHost(RabbitMqConfig.HOST);
     //自动关闭连接，因为Connection集成了Closeable
     try (Connection connection = connectionFactory.newConnection();
          Channel channel = connection.createChannel();){
@@ -68,7 +69,7 @@ public class OrderMessageService {
         String messageBody  = new String (message.getBody());
         //回发消息
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("49.233.5.107");
+        connectionFactory.setHost(RabbitMqConfig.HOST);
         try{
             //将消息反序列化为DTO
             OrderMessageDTO orderMessageDTO = objectMapper.readValue(messageBody, OrderMessageDTO.class);

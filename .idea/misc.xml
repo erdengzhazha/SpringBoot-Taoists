@@ -9,6 +9,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot-Validated/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot-RabbitMq/deliveryman-server-manager/pom.xml" />
       </list>
     </option>
   </component>
