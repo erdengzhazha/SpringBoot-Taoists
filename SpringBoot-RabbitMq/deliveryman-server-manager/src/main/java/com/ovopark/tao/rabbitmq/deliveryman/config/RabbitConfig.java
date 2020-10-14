@@ -1,18 +1,17 @@
-package com.ovopark.tao.rabbitmq.orderserver.config;
+package com.ovopark.tao.rabbitmq.deliveryman.config;
 
 import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
-import com.rabbitmq.client.Return;
-import com.rabbitmq.client.ReturnCallback;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +25,8 @@ public class RabbitConfig {
    */
   @Bean
   public Exchange cwExchange(){
-    return new DirectExchange("exchange.boot.cw",true,false,null);
+
+    return new DirectExchange("exchange.boot.cw.delivery",true,false,null);
   }
 
   /**
@@ -37,8 +37,8 @@ public class RabbitConfig {
   public Queue queue(){
     Map<String,Object> map = new HashMap<String,Object>(16);
     map.put("x-message-ttl",15000);
-    map.put("x-dead-letter-exchange","exchange.boot.cw.delivery");
-    return new Queue("queue.boot.cw",true,false,false,map);
+    //map.put("x-dead-letter-exchange","dlx.exchange");
+    return new Queue("queue.boot.cw.delivery",true,false,false,map);
   }
 
   /**
@@ -47,7 +47,7 @@ public class RabbitConfig {
    */
   @Bean
   public Binding binding(){
-    Binding binding = new Binding("queue.boot.cw", Binding.DestinationType.QUEUE,"exchange.boot.cw","dalay",null);
+    Binding binding = new Binding("queue.boot.cw.delivery", Binding.DestinationType.QUEUE,"exchange.boot.cw.delivery","dalay.delivery",null);
     return binding;
   }
 
@@ -89,27 +89,20 @@ public class RabbitConfig {
     return rabbitTemplate;
   }
 
+  @Bean
+  public SimpleMessageListenerContainer messageListenerContainer(@Autowired ConnectionFactory connectionFactory){
+    SimpleMessageListenerContainer messageListenerContainer = new SimpleMessageListenerContainer();
+    messageListenerContainer.setQueueNames("queue.boot.cw"); //监听多个队列
+    messageListenerContainer.setConcurrentConsumers(3);  //限制消费者个数 3 个
+    messageListenerContainer.setMaxConcurrentConsumers(5);  //最大的并发梁 5
+    messageListenerContainer.setAcknowledgeMode(AcknowledgeMode.AUTO); //ACK
+    messageListenerContainer.setConnectionFactory(connectionFactory);
+    messageListenerContainer.setMessageListener(message -> log.info("message:{}",message));
+    return messageListenerContainer;
+  }
 
 
 
 
 
-  //被Autowired注解在SpringBoot启动的时候自动启动
-//  @Autowired
-//  public void initRabbit(){
-//    CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
-//    cachingConnectionFactory.setHost(RabbitMqConfig.HOST);
-//    cachingConnectionFactory.setPort(RabbitMqConfig.PORT);
-//    cachingConnectionFactory.setUsername("xing");
-//    cachingConnectionFactory.setPassword("123456");
-//    RabbitAdmin rabbitAdmin = new RabbitAdmin(cachingConnectionFactory);
-//    Exchange cwExchange = new DirectExchange("exchange.boot.cw",true,false,null);
-//    rabbitAdmin.declareExchange(cwExchange);
-//    Map<String,Object> map = new HashMap<String,Object>(16);
-//    map.put("x-message-ttl",15000);
-//    map.put("x-dead-letter-exchange","dlx.exchange");
-//    Queue queue = new Queue("queue.boot.cw",true,false,false,map);
-//    rabbitAdmin.declareQueue(queue);
-//    Binding binding = new Binding("", Binding.DestinationType.QUEUE,"","",null);
-//  }
 }

@@ -3,25 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SpringBoot-Taoists</artifactId>
+        <artifactId>SpringBoot-RabbitMq</artifactId>
         <groupId>com.ovopark</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SpringBoot-RabbitMq</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>order-server-manager</module>
-        <module>common</module>
-        <module>message-consumer</module>
-    </modules>
+    <artifactId>message-consumer</artifactId>
     <dependencies>
-        <!--   Spring-Rabbit jar -->
         <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
-            <version>2.2.11.RELEASE</version>
+            <groupId>com.ovopark</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

@@ -5,6 +5,7 @@ import com.rabbitmq.client.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -87,20 +88,25 @@ public class ProfileTest {
   @Autowired
   private RabbitTemplate rabbitTemplate;
   /**
-   * 发送消息
+   * TODO 发送消息 ，确认消息返回
+   * 坑： 如果下面没有 延迟让线程结束，你会发现收不到确认发送信息
    */
   @Test
-  public void testRabbitTemplet(){
+  public void testRabbitTemplet() throws InterruptedException {
     MessageProperties messageProperties = new MessageProperties();
-    messageProperties.setExpiration("15000");
+    messageProperties.setExpiration("60000");
     String m = "随便说点什么";
     Message message = new Message(m.getBytes(),messageProperties);
+    CorrelationData correlationData = new CorrelationData();
+    correlationData.setId("特殊");
     /**
      * 消息发送， convertAndSend 不好设置过期时间
      */
     //rabbitTemplate.convertAndSend("dalay","dalay",m);
-    rabbitTemplate.send("dalay","dalay",message);
+    rabbitTemplate.send("exchange.boot.cw","dalay",message,correlationData);
+    Thread.sleep(5000);
   }
+
 
 
 }
