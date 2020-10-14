@@ -3,6 +3,9 @@ package com.ovopark.tao.rabbitmq.orderserver;
 import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
 import com.rabbitmq.client.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -79,6 +82,24 @@ public class ProfileTest {
       channel.basicPublish("dalay","dalay",properties,message.getBytes());
 
     }
+  }
+
+  @Autowired
+  private RabbitTemplate rabbitTemplate;
+  /**
+   * 发送消息
+   */
+  @Test
+  public void testRabbitTemplet(){
+    MessageProperties messageProperties = new MessageProperties();
+    messageProperties.setExpiration("15000");
+    String m = "随便说点什么";
+    Message message = new Message(m.getBytes(),messageProperties);
+    /**
+     * 消息发送， convertAndSend 不好设置过期时间
+     */
+    //rabbitTemplate.convertAndSend("dalay","dalay",m);
+    rabbitTemplate.send("dalay","dalay",message);
   }
 
 
