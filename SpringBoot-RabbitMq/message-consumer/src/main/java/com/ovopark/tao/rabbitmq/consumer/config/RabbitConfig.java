@@ -1,6 +1,7 @@
 package com.ovopark.tao.rabbitmq.consumer.config;
 
 import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
+import com.ovopark.tao.rabbitmq.consumer.service.MessageService;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;
@@ -9,7 +10,11 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
+import org.springframework.amqp.support.converter.ClassMapper;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +25,10 @@ import java.util.Map;
 @Slf4j
 @Configuration
 public class RabbitConfig {
+
+  @Autowired
+  private MessageService messageService;
+
   /**
    * 注入一个交换机
    * @return
@@ -110,15 +119,34 @@ public class RabbitConfig {
 //      }
 //    });
 
-    messageListenerContainer.setAcknowledgeMode(AcknowledgeMode.MANUAL); //ACK
-    messageListenerContainer.setMessageListener(new ChannelAwareMessageListener() {
+    //messageListenerContainer.setAcknowledgeMode(AcknowledgeMode.MANUAL); //ACK
+//    messageListenerContainer.setMessageListener(new ChannelAwareMessageListener() {
+//      @Override
+//      public void onMessage(Message message, Channel channel) throws Exception {
+//        log.info("message:{}",message);
+//        messageService.handleMessage(message.getBody());
+//        channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+//      }
+//    });
+    messageListenerContainer.setPrefetchCount(1);
+    Map<String,String> methodMap = new HashMap<>(16);
+    methodMap.put("queue.boot.cw","handleMessageCW");
+    MessageListenerAdapter messageListenerAdapter = new MessageListenerAdapter(messageService);
+    Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
+    jackson2JsonMessageConverter.setClassMapper(new ClassMapper() {
       @Override
-      public void onMessage(Message message, Channel channel) throws Exception {
-        log.info("message:{}",message);
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+      public void fromClass(Class<?> aClass, MessageProperties messageProperties) {
+
+      }
+
+      @Override
+      public Class<?> toClass(MessageProperties messageProperties) {
+        return RabbitMqConfig.class;
       }
     });
-    messageListenerContainer.setPrefetchCount(1);
+    messageListenerAdapter.setMessageConverter(jackson2JsonMessageConverter);
+    messageListenerAdapter.setQueueOrTagToMethodName(methodMap);
+    messageListenerContainer.setMessageListener(messageListenerAdapter);
     return messageListenerContainer;
   }
 

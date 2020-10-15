@@ -1,5 +1,9 @@
 package com.ovopark.tao.rabbitmq.orderserver;
 
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
 import com.rabbitmq.client.*;
 import org.junit.jupiter.api.Test;
@@ -85,20 +89,24 @@ public class ProfileTest {
     }
   }
 
+
   @Autowired
   private RabbitTemplate rabbitTemplate;
+
   /**
    * TODO 发送消息 ，确认消息返回
    * 坑： 如果下面没有 延迟让线程结束，你会发现收不到确认发送信息
    */
   @Test
-  public void testRabbitTemplet() throws InterruptedException {
+  public void testRabbitTemplet() throws InterruptedException, JsonProcessingException {
     MessageProperties messageProperties = new MessageProperties();
     messageProperties.setExpiration("60000");
-    String m = "随便说点什么";
+    RabbitMqConfig rabbitMqConfig = new RabbitMqConfig();
+    String m = JSON.toJSONString(rabbitMqConfig);
     Message message = new Message(m.getBytes(),messageProperties);
     CorrelationData correlationData = new CorrelationData();
     correlationData.setId("特殊");
+
     /**
      * 消息发送， convertAndSend 不好设置过期时间
      */

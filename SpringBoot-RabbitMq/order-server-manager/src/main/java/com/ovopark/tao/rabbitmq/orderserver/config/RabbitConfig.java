@@ -10,6 +10,9 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.ClassMapper;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -76,10 +79,28 @@ public class RabbitConfig {
     return rabbitAdmin;
   }
 
+//  @Bean
+//  public MessageConverter jsonMessageConverter() {
+//    Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
+//    jackson2JsonMessageConverter.setClassMapper(new ClassMapper() {
+//      @Override
+//      public void fromClass(Class<?> aClass, MessageProperties messageProperties) {
+//        messageProperties.setHeader("__TypeId__","com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig");
+//      }
+//
+//      @Override
+//      public Class<?> toClass(MessageProperties messageProperties) {
+//        return null;
+//      }
+//    });
+//    return jackson2JsonMessageConverter;
+//  }
+
   @Bean
   public RabbitTemplate rabbitTemplate(@Autowired ConnectionFactory connectionFactory){
     RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
     rabbitTemplate.setMandatory(true); //打开
+    //rabbitTemplate.setMessageConverter(jsonMessageConverter());
     rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) ->
       log.info("message:{},replyCode:{},replyText:{},exchange:{},routingKey:{}",message,replyCode,replyText,exchange,routingKey)
     );
