@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: cw_doc
+#      authentication-database: admin
+      uri: mongodb://admin:123456@192.168.48.129:27017

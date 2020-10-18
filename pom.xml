@@ -8,6 +8,13 @@
     <artifactId>SpringBoot-Taoists</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+    <properties>
+        <spring.version>2.2.10.RELEASE</spring.version>
+        <lombok.version>1.18.12</lombok.version>
+        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+        <mysql.driver.version>5.1.49</mysql.driver.version>
+        <fastjson.version>1.2.72</fastjson.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,6 +28,7 @@
         <module>SpringBoot-Validated</module>
         <module>SpringBoot-RabbitMq</module>
         <module>SpringBoot-MyBatisPlus</module>
+        <module>SpringBoot-MongoDB</module>
     </modules>
 
 
@@ -30,29 +38,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.10.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <!--    lombok    -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>${lombok.version}</version>
         </dependency>
 
-        <!--  数据库连接相关  -->
-        <!--  mybatis plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-        <!--  mysql driver -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.49</version>
-        </dependency>
+
 
         <!--   Spring Boot 测试     -->
         <dependency>
@@ -71,7 +67,13 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.72</version>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!--   log4j     -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
     </dependencies>
 
