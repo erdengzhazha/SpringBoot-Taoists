@@ -14,12 +14,14 @@
         <module name="deliveryman-server-manager" />
         <module name="order-server-manager" />
         <module name="SpringBoot-MongoDB" />
+        <module name="design-patterns" />
         <module name="SpringBoot-Validated" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBoot-Java" options="-parameters" />
       <module name="SpringBoot-MongoDB" options="-parameters" />
       <module name="SpringBoot-MyBatisPlus" options="-parameters" />
       <module name="SpringBoot-RabbitMq" options="-parameters" />
@@ -27,6 +29,7 @@
       <module name="SpringBoot-i18n" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="deliveryman-server-manager" options="-parameters" />
+      <module name="design-patterns" options="-parameters" />
       <module name="message-consumer" options="-parameters" />
       <module name="order-server-manager" options="-parameters" />
     </option>

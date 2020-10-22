@@ -29,6 +29,7 @@
         <module>SpringBoot-RabbitMq</module>
         <module>SpringBoot-MyBatisPlus</module>
         <module>SpringBoot-MongoDB</module>
+        <module>SpringBoot-Java</module>
     </modules>
 
 
