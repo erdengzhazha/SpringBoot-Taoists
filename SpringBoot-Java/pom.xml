@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>design-patterns</module>
+        <module>Java-Tool</module>
     </modules>
 
 
