@@ -3,4 +3,4 @@ spring:
     mongodb:
       database: cw_doc
 #      authentication-database: admin
-      uri: mongodb://admin:123456@192.168.48.129:27017
+      uri: mongodb://admin:123456@49.233.5.107:27017

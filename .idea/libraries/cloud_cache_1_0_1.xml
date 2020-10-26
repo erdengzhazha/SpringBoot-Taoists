@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cloud-cache-1.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SpringBoot-MongoDB/lib/cloud-cache-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

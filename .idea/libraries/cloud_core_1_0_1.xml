@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cloud-core-1.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SpringBoot-MongoDB/lib/cloud-core-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

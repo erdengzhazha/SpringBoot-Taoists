@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="boot-common-1.0.1 (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SpringBoot-MongoDB/lib/boot-common-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

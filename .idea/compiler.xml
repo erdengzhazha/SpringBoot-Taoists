@@ -9,20 +9,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="message-consumer" />
         <module name="SpringBoot-MyBatisPlus" />
-        <module name="SpringBoot-i18n" />
         <module name="common" />
-        <module name="deliveryman-server-manager" />
+        <module name="SpringBoot-i18n" />
         <module name="Java-Tool" />
-        <module name="order-server-manager" />
-        <module name="SpringBoot-MongoDB" />
         <module name="Java-JUC" />
+        <module name="order-server-manager" />
+        <module name="cloud-tool-rabbitmq" />
+        <module name="deliveryman-server-manager" />
         <module name="design-patterns" />
+        <module name="SpringBoot-MongoDB" />
         <module name="SpringBoot-Validated" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Java-JUC" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -34,6 +32,7 @@
       <module name="SpringBoot-RabbitMq" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />
+      <module name="cloud-tool-rabbitmq" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="deliveryman-server-manager" options="-parameters" />
       <module name="design-patterns" options="-parameters" />

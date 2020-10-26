@@ -15,6 +15,7 @@
         <module>order-server-manager</module>
         <module>common</module>
         <module>message-consumer</module>
+        <module>cloud-tool-rabbitmq</module>
     </modules>
     <dependencies>
         <!--   Spring-Rabbit jar -->
