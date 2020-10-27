@@ -1,0 +1,30 @@
+server:
+  port: 9921
+spring:
+  application:
+    name: order
+  cloud:
+    nacos:
+      config:
+        server-addr: 49.233.5.107:8848
+        file-extension: yaml
+        namespace: cfbb28e5-8049-45c0-bd85-e43314f12516
+        group: ORDER_GROUP
+      discovery:
+        server-addr: 49.233.5.107:8848
+        namespace: cfbb28e5-8049-45c0-bd85-e43314f12516
+#---
+#spring:
+#  profiles: prod
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 11.162.196.16:8848
+#        namespace: c4c81555-91e1-4ef5-8b57-77c5407b3481
+#      discovery:
+#        server-addr: 11.162.196.16:8848
+#        namespace: c4c81555-91e1-4ef5-8b57-77c5407b3481
+#---
+#spring:
+#  profiles:
+#    active: dev

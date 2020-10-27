@@ -1,0 +1,13 @@
+#spring:
+#  data:
+#    mongodb:
+#      database: cw_doc
+##      authentication-database:
+#      uri: mongodb://admin:123456@49.233.5.107:27017
+
+
+spring:
+  data:
+    mongodb:
+      authentication-database: edasdb
+      uri: mongodb://dc_opener:#open_ovopark2020@47.96.11.161:27017/edasdb
