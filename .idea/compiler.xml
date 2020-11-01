@@ -13,7 +13,6 @@
         <module name="SpringBoot-MongoDB" />
         <module name="order" />
         <module name="order-server-manager" />
-        <module name="SpringBoot-i18n" />
         <module name="user" />
         <module name="nacos-spring-boot-discovery" />
         <module name="SpringBoot-MyBatisPlus" />
@@ -21,6 +20,7 @@
         <module name="SpringBoot-Validated" />
         <module name="cloud-tool-rabbitmq" />
         <module name="Java-Tool" />
+        <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="common" />
       </profile>
