@@ -32,6 +32,12 @@
             <version>${mysql.driver.version}</version>
         </dependency>
         <!--   mybatis   end  -->
+
+        <!--   spring aop     -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
