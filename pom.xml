@@ -31,6 +31,7 @@
         <module>SpringBoot-MongoDB</module>
         <module>SpringBoot-Java</module>
         <module>SpringBoot-Nacos</module>
+        <module>SpringBoot-AOP</module>
     </modules>
 
 

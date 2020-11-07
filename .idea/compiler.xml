@@ -11,9 +11,9 @@
         <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
+        <module name="SpringBoot-AOP" />
         <module name="order" />
         <module name="order-server-manager" />
-        <module name="SpringBoot-i18n" />
         <module name="user" />
         <module name="nacos-spring-boot-discovery" />
         <module name="SpringBoot-MyBatisPlus" />
@@ -21,6 +21,7 @@
         <module name="SpringBoot-Validated" />
         <module name="cloud-tool-rabbitmq" />
         <module name="Java-Tool" />
+        <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="common" />
       </profile>
@@ -33,6 +34,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />
+      <module name="SpringBoot-AOP" options="-parameters" />
       <module name="SpringBoot-Java" options="-parameters" />
       <module name="SpringBoot-MongoDB" options="-parameters" />
       <module name="SpringBoot-MyBatisPlus" options="-parameters" />
