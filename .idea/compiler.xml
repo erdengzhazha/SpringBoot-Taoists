@@ -21,6 +21,7 @@
         <module name="SpringBoot-Validated" />
         <module name="cloud-tool-rabbitmq" />
         <module name="Java-Tool" />
+        <module name="SpringBoot-Netty" />
         <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="common" />
@@ -40,6 +41,7 @@
       <module name="SpringBoot-MyBatisPlus" options="-parameters" />
       <module name="SpringBoot-Nacos" options="-parameters" />
       <module name="SpringBoot-Nacos-Demo01" options="-parameters" />
+      <module name="SpringBoot-Netty" options="-parameters" />
       <module name="SpringBoot-RabbitMq" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />

@@ -32,6 +32,7 @@
         <module>SpringBoot-Java</module>
         <module>SpringBoot-Nacos</module>
         <module>SpringBoot-AOP</module>
+        <module>SpringBoot-Netty</module>
     </modules>
 
 
