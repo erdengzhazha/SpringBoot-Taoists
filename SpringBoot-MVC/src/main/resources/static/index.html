@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文档标题</title>
+</head>
+<style type="text/css">
+    .default_div{
+
+    }
+</style>
+<body>
+
+<div style="width: 800px;height: 600px;margin: auto; border: solid 1px black;">
+    <div class="chat_div" style="height:400px;width:800px;overflow:auto;background:#EEEEEE;">
+        <div class="workorder default_div" style="text-align:right; padding:20px">
+            <div>
+                客服:XiuEr
+            </div>
+            欢迎您 XXXXXXX
+        </div>
+
+        <!-- IM的聊天历史记录 start -->
+        <div style="text-align: center;color: deeppink">------------------------------IM的聊天历史记录 start------------------------------</div>
+        <div class="im_div">
+            <div class="im_div_客户 default_div">
+                <div>
+                    客户:ZhangYuFei
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问个问题
+            </div>
+            <div class="im_div_客服 default_div" style="text-align:right; padding:20px">
+                <div>
+                    客服:XiuEr
+                </div>
+                您说 ，xxxxx
+            </div>
+            <div class="im_div_客户 default_div">
+                <div>
+                    客户:ZhangYuFei
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PC6是什么？
+            </div>
+        </div>
+        <div style="text-align: center;color: deeppink">------------------------------IM的聊天历史记录 end------------------------------</div>
+        <!-- IM的聊天历史记录 end -->
+        <!-- 如果此时的工单状态是结单，并且是预结单导致的显示下面的div start -->
+        <div class="workorder default_div" style="text-align:right;padding:20px">
+            <div>
+                客服:XiuEr
+            </div>
+            由于长时间未接到您的反馈，工单已自动结单，若有其他问题咨询请提交新的工单
+        </div>
+        <!-- 如果此时的工单状态是结单，并且是预结单导致的显示下面的div end -->
+
+        <!-- 如果此时的工单状态是结单，非预结单导致的显示下面的div start -->
+        <div class="workorder default_div" style="text-align:right;padding:20px">
+            <div>
+                客服:XiuEr
+            </div>
+            您的支持是我们前进的动力，感谢您的评价，谢谢～～
+        </div>
+        <!-- 如果此时的工单状态是结单，非预结单导致的显示下面的div end -->
+
+
+    </div>
+    <div style="height:100px;width:800px;margin-top:10px;overflow:auto;background:#EEEEEE;">
+        <input type="text" value="输入您想要问的问题~~" style="height: 94px;width:792px">
+    </div>
+    <div style="height: 30px ;width: 800px;text-align: right">
+        <input type="button" style="height: 30px ;width: 100px" value="发送"  onclick="chattingClient()"></input>
+    </div>
+
+
+
+
+</div>
+<div style="position: absolute; left: 5px;top: 0;">
+
+    <textarea style="    width: 530px;
+    height: 700px;">/***
+     * @apiNote 此方法是在聊天窗口调取
+     *
+     *
+     */
+    function initChat() {
+        //1. 与IM进行WebSocket连接
+        //2. 显示第一条 聊天数据, 往 class="chat_div" append 一条 div="欢迎您 XXXXXXX"
+        //3. 发起请求从IM后端拿历史数据
+        //4. 便利IM的历史数据往 class="im_div" 的div中遍历
+        /**
+         * 5. if (结单了并且是预结单导致的){
+         *        (1) 往class="chat_div" append 一条div "由于长时间未接到您的反馈，工单已自动结单，若有其他问题咨询请提交新的工单"
+         *        (2) 发送按钮置灰色
+         *    }else if (结单了并且不是预结单导致的){
+         *        (1) 往class="chat_div" append 一条div  "您的支持是我们前进的动力，感谢您的评价，谢谢～～"
+         *        (2) 发送按钮置灰色
+         *    }
+         *
+         */
+    }
+
+    /**
+     * @apiNote 此方法是用于在线聊天客户端
+     */
+    function chattingClient() {
+        //获取
+        //1. 现在页面上，往 class="im_div" append 一条div "你要发送的消息"
+        //2. 往WebSocket发送消息
+    }
+
+    /**
+     * @apiNote 此方法用于在线聊天服务端 (实时接收消息)
+     */
+    function chattingService() {
+        //1. 只要接收到了消息，判断是谁发的消息？
+        //2. 往 clss = "im_div" ，append一条div "class = 'im_div 客户or客服"接收到的消息"
+    }</textarea>
+</div>
+<div style="text-align: center; width: auto; border: green solid 0px;">
+    <img alt="" src="消息回复流程的副本.png" style="margin: 0 auto;" />
+</div>
+
+
+
+<script>
+
+    /***
+     * @apiNote 此方法是在聊天窗口调取
+     *
+     *
+     */
+    function initChat() {
+        //1. 与IM进行WebSocket连接
+        //2. 显示第一条 聊天数据, 往 class="chat_div" append 一条 div="欢迎您 XXXXXXX"
+        //3. 发起请求从IM后端拿历史数据
+        //4. 便利IM的历史数据往 class="im_div" 的div中遍历
+        /**
+         * 5. if (结单了并且是预结单导致的){
+         *        (1) 往class="chat_div" append 一条div "由于长时间未接到您的反馈，工单已自动结单，若有其他问题咨询请提交新的工单"
+         *        (2) 发送按钮置灰色
+         *    }else if (结单了并且不是预结单导致的){
+         *        (1) 往class="chat_div" append 一条div  "您的支持是我们前进的动力，感谢您的评价，谢谢～～"
+         *        (2) 发送按钮置灰色
+         *    }
+         *
+         */
+    }
+
+    /**
+     * @apiNote 此方法是用于在线聊天客户端
+     */
+    function chattingClient() {
+        //获取
+        //1. 现在页面上，往 class="im_div" append 一条div "你要发送的消息"
+        //2. 往WebSocket发送消息
+    }
+
+    /**
+     * @apiNote 此方法用于在线聊天服务端 (实时接收消息)
+     */
+    function chattingService() {
+        //1. 只要接收到了消息，判断是谁发的消息？
+        //2. 往 clss = "im_div" ，append一条div "class = 'im_div 客户or客服"接收到的消息"
+    }
+
+</script>
+</body>
+</html>
