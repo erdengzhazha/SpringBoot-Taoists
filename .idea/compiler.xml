@@ -19,6 +19,7 @@
         <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
         <module name="SpringBoot-Validated" />
+        <module name="SpringBoot-feign" />
         <module name="cloud-tool-rabbitmq" />
         <module name="Java-Tool" />
         <module name="SpringBoot-Netty" />
@@ -46,6 +47,7 @@
       <module name="SpringBoot-Netty" options="-parameters" />
       <module name="SpringBoot-RabbitMq" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
+      <module name="SpringBoot-feign" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />
       <module name="cloud-tool-rabbitmq" options="-parameters" />
       <module name="common" options="-parameters" />
