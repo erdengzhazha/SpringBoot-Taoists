@@ -14,8 +14,8 @@ public class DoMain {
     EsApi elastic = Feign.builder()
       .decoder(new GsonDecoder())
       .decoder(new StringDecoder())
-      .requestInterceptor(new BasicAuthRequestInterceptor("elastic", "Ovopark#2020"))
-      .target(EsApi.class, "http://47.111.16.185:6200");
+      .requestInterceptor(new BasicAuthRequestInterceptor("", ""))
+      .target(EsApi.class, "");
 
 //    Map<String,Object> map = new HashMap<>(4);
 //    map.put("index","new-article");
