@@ -1,0 +1,8 @@
+com/ovopark/rabbit/entity/Order.class
+com/ovopark/rabbit/service/MessageService.class
+com/ovopark/rabbit/service/imp/DeclareServiceImpl.class
+com/ovopark/rabbit/config/RabbitConfig.class
+com/ovopark/rabbit/config/RabbitProperties.class
+com/ovopark/rabbit/RabbitApplication.class
+com/ovopark/rabbit/controller/InitController.class
+com/ovopark/rabbit/service/DeclareService.class

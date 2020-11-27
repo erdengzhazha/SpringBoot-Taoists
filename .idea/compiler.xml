@@ -11,6 +11,7 @@
         <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
+        <module name="DelayQueue" />
         <module name="SpringBoot-AOP" />
         <module name="order" />
         <module name="order-server-manager" />
@@ -25,6 +26,7 @@
         <module name="SpringBoot-Netty" />
         <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
+        <module name="DelayQueueConsumer" />
         <module name="SpringBoot-MVC" />
         <module name="common" />
       </profile>
@@ -32,6 +34,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DelayQueue" options="-parameters" />
+      <module name="DelayQueueConsumer" options="-parameters" />
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />
       <module name="SpringBoot-AOP" options="-parameters" />

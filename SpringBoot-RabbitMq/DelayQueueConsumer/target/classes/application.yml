@@ -1,0 +1,10 @@
+server:
+  port: 9003
+rabbitmq:
+    single:
+      host: '172.16.22.30'
+      port: 5672
+      username: guest
+      password: guest
+      messageTTL: 60000
+
