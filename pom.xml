@@ -35,6 +35,7 @@
         <module>SpringBoot-Netty</module>
         <module>SpringBoot-MVC</module>
         <module>SpringBoot-feign</module>
+        <module>SpringBoot-Zookeeper</module>
     </modules>
 
 

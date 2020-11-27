@@ -29,6 +29,7 @@
         <module name="DelayQueueConsumer" />
         <module name="SpringBoot-MVC" />
         <module name="common" />
+        <module name="SpringBoot-Zookeeper" />
       </profile>
     </annotationProcessing>
   </component>
@@ -48,6 +49,7 @@
       <module name="SpringBoot-Netty" options="-parameters" />
       <module name="SpringBoot-RabbitMq" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
+      <module name="SpringBoot-Zookeeper" options="-parameters" />
       <module name="SpringBoot-feign" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />
       <module name="cloud-tool-rabbitmq" options="-parameters" />
