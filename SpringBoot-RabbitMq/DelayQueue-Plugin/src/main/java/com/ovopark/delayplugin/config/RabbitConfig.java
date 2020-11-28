@@ -1,6 +1,7 @@
-package com.ovopark.rabbitconsumer.config;
+package com.ovopark.delayplugin.config;
 
-import com.ovopark.rabbitconsumer.server.MessageService;
+import com.ovopark.delayplugin.service.MessageService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -11,6 +12,7 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.amqp.RabbitProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,22 +20,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description RabbitMq Spring配置
- * @author  Xiu_Er 13813641925@163.com
- * @Date 2020年10月15号 下午7:56
+ *  RabbitMq 的配置文件
+ * @author Xiu_Er 1381364195@163.com
+ * @Date 2020年11月28日 下午 4：08
  */
+@Slf4j
 @Configuration
 public class RabbitConfig {
-
-  private static Logger log =  LoggerFactory.getLogger(RabbitConfig.class);
-  static Map<String,String> methodMap = new HashMap<>();
-
   /**
    * 连接工厂
    * @return
    */
   @Bean
-  public ConnectionFactory connectionFactory(@Autowired RabbitProperties rabbitMqProperties){
+  public ConnectionFactory connectionFactory(@Autowired RabbitMqProperties rabbitMqProperties){
     CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
     cachingConnectionFactory.setHost(rabbitMqProperties.getHost());
     cachingConnectionFactory.setPort(rabbitMqProperties.getPort());
@@ -71,8 +70,11 @@ public class RabbitConfig {
     return rabbitTemplate;
   }
 
+
   @Autowired
   private MessageService messageService;
+  private static Logger log =  LoggerFactory.getLogger(RabbitConfig.class);
+  static Map<String,String> methodMap = new HashMap<>();
   /**
    * 配置监听
    * @param connectionFactory
@@ -82,19 +84,14 @@ public class RabbitConfig {
   @Bean
   public SimpleMessageListenerContainer messageListenerContainer(@Autowired ConnectionFactory connectionFactory){
     SimpleMessageListenerContainer messageListenerContainer = new SimpleMessageListenerContainer(connectionFactory);
-    messageListenerContainer.setQueueNames("dtl.queue.projectName");
+
+    messageListenerContainer.setQueueNames("test-queue");
     messageListenerContainer.setConcurrentConsumers(3);
     messageListenerContainer.setMaxConcurrentConsumers(5);
     messageListenerContainer.setPrefetchCount(1);
 
-
-
     MessageListenerAdapter messageListenerAdapter = new MessageListenerAdapter(messageService);
-    methodMap.put("dtl.queue.projectName","handleOrderMessage");
-
-
-
-
+    methodMap.put("test-queue","handleOrderMessage");
 
     messageListenerAdapter.setMessageConverter(new Jackson2JsonMessageConverter());
     messageListenerAdapter.setQueueOrTagToMethodName(methodMap);
@@ -102,5 +99,4 @@ public class RabbitConfig {
 
     return messageListenerContainer;
   }
-
 }

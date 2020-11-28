@@ -11,7 +11,6 @@
         <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
-        <module name="DelayQueue" />
         <module name="SpringBoot-AOP" />
         <module name="order" />
         <module name="order-server-manager" />
@@ -20,8 +19,10 @@
         <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
         <module name="SpringBoot-Validated" />
-        <module name="SpringBoot-feign" />
+        <module name="DelayQueue" />
+        <module name="DelayQueue-Plugin" />
         <module name="cloud-tool-rabbitmq" />
+        <module name="SpringBoot-feign" />
         <module name="Java-Tool" />
         <module name="SpringBoot-Netty" />
         <module name="SpringBoot-i18n" />
@@ -36,6 +37,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DelayQueue" options="-parameters" />
+      <module name="DelayQueue-Plugin" options="-parameters" />
       <module name="DelayQueueConsumer" options="-parameters" />
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />

@@ -18,6 +18,7 @@
         <module>cloud-tool-rabbitmq</module>
         <module>DelayQueue</module>
         <module>DelayQueueConsumer</module>
+        <module>DelayQueue-Plugin</module>
     </modules>
     <dependencies>
         <!--   Spring-Rabbit jar -->
