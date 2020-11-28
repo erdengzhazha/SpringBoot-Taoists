@@ -18,6 +18,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 延迟交换机插件 Demo
+ * @author Xiu_Er 13813641925@163.com
+ * @Date 2020年11月28号 下午 5:59
+ */
 @SpringBootTest
 public class DelayPluginDemo {
 
@@ -30,14 +35,21 @@ public class DelayPluginDemo {
   @Autowired
   private RabbitTemplate rabbitTemplate;
 
+  /**
+   * 初始化延迟Exchange
+   */
   @Test
   public void initExchange(){
     Map<String, Object> map = new HashMap<>();
     map.put("x-delayed-type", "direct");
+    //new 一个自定义的Exchange
     Exchange exchange = new DelayExchange("delay-exchange-test",true,false,map);
     rabbitAdmin.declareExchange(exchange);
   }
 
+  /**
+   * 初始化普通的Queue
+   */
   @Test
   public void initQueue(){
     Queue queue = new Queue("test-queue", true, false, false, null);
@@ -46,6 +58,10 @@ public class DelayPluginDemo {
     rabbitAdmin.declareBinding(binding);
   }
 
+  /**
+   * 发送消息
+   * @throws UnsupportedEncodingException
+   */
   @Test
   public void send() throws UnsupportedEncodingException {
 //    byte[] messageBodyBytes = "delayed payload".getBytes("UTF-8");
@@ -56,6 +72,7 @@ public class DelayPluginDemo {
     MessageProperties messageProperties = new MessageProperties();
     messageProperties.setContentType(MessageProperties.CONTENT_TYPE_JSON);
     messageProperties.setHeader("__TypeId__","com.ovopark.delayplugin.entity.Order");
+    //发送延迟时间
     messageProperties.setHeader("x-delay",5000);
     Message message = new Message(messageBodyBytes,messageProperties);
     CorrelationData correlationData = new CorrelationData();
