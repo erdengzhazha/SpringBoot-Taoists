@@ -85,13 +85,13 @@ public class RabbitConfig {
   public SimpleMessageListenerContainer messageListenerContainer(@Autowired ConnectionFactory connectionFactory){
     SimpleMessageListenerContainer messageListenerContainer = new SimpleMessageListenerContainer(connectionFactory);
 
-    messageListenerContainer.setQueueNames("test-queue");
+    messageListenerContainer.setQueueNames("queue.smart.devv");
     messageListenerContainer.setConcurrentConsumers(3);
     messageListenerContainer.setMaxConcurrentConsumers(5);
     messageListenerContainer.setPrefetchCount(1);
 
     MessageListenerAdapter messageListenerAdapter = new MessageListenerAdapter(messageService);
-    methodMap.put("test-queue","handleOrderMessage");
+    methodMap.put("queue.smart.devv","handleOrderMessage");
 
     messageListenerAdapter.setMessageConverter(new Jackson2JsonMessageConverter());
     messageListenerAdapter.setQueueOrTagToMethodName(methodMap);

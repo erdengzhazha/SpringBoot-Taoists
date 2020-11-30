@@ -14,7 +14,7 @@
     <modules>
         <module>design-patterns</module>
         <module>Java-Tool</module>
-        <module>JUC</module>
+        <module>Java-JUC</module>
     </modules>
 
 

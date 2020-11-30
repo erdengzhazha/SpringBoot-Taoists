@@ -73,11 +73,11 @@ public class DelayPluginDemo {
     messageProperties.setContentType(MessageProperties.CONTENT_TYPE_JSON);
     messageProperties.setHeader("__TypeId__","com.ovopark.delayplugin.entity.Order");
     //发送延迟时间
-    messageProperties.setHeader("x-delay",5000);
+    messageProperties.setHeader("x-delay",10000);
     Message message = new Message(messageBodyBytes,messageProperties);
     CorrelationData correlationData = new CorrelationData();
     correlationData.setId("name");
-    rabbitTemplate.send("delay-exchange-test","delay-key",message,correlationData);
+    rabbitTemplate.send("delay.exchange.smart.devv","delay.key.smart.devv",message,correlationData);
     System.out.println("消息发送了"+new SimpleDateFormat("yyyyMMdd hh:mm:ss").format(new Date()));
     try {
       Thread.sleep(500000);

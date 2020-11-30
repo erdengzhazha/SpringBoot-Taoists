@@ -2,7 +2,7 @@ server:
   port: 9003
 rabbit:
   single:
-    host: '172.16.22.30'
+    host: '47.98.184.180'
     port: 5672
     username: guest
     password: guest
