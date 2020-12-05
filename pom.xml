@@ -36,6 +36,7 @@
         <module>SpringBoot-MVC</module>
         <module>SpringBoot-feign</module>
         <module>SpringBoot-Zookeeper</module>
+        <module>SpringBoot-Hystrix</module>
     </modules>
 
 
