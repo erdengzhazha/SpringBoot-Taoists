@@ -11,6 +11,7 @@
         <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
+        <module name="SpringBoot-HikariCP" />
         <module name="order-server-manager" />
         <module name="SpringBoot-AOP" />
         <module name="order" />
@@ -43,6 +44,7 @@
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />
       <module name="SpringBoot-AOP" options="-parameters" />
+      <module name="SpringBoot-HikariCP" options="-parameters" />
       <module name="SpringBoot-Hystrix" options="-parameters" />
       <module name="SpringBoot-Java" options="-parameters" />
       <module name="SpringBoot-MVC" options="-parameters" />

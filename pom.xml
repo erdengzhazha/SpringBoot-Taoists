@@ -37,6 +37,7 @@
         <module>SpringBoot-feign</module>
         <module>SpringBoot-Zookeeper</module>
         <module>SpringBoot-Hystrix</module>
+        <module>SpringBoot-HikariCP</module>
     </modules>
 
 

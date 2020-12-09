@@ -85,7 +85,7 @@ public class RabbitConfig {
   public SimpleMessageListenerContainer messageListenerContainer(@Autowired ConnectionFactory connectionFactory){
     SimpleMessageListenerContainer messageListenerContainer = new SimpleMessageListenerContainer(connectionFactory);
 
-    messageListenerContainer.setQueueNames("queue.smart.devv");
+    messageListenerContainer.setQueueNames("queue.delay.workOrder");
     messageListenerContainer.setConcurrentConsumers(3);
     messageListenerContainer.setMaxConcurrentConsumers(5);
     messageListenerContainer.setPrefetchCount(1);

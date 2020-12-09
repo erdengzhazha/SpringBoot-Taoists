@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+
 @Slf4j
 @SpringBootTest(classes = MPApplication.class)
 public class MPApplicationTest {
@@ -16,6 +19,6 @@ public class MPApplicationTest {
   @Test
   public void myTest(){
     User user = userMapper.selectById(1);
-    log.info("user的名字: {name}",user);
+    log.info("user的名字: {user}",user);
   }
 }
