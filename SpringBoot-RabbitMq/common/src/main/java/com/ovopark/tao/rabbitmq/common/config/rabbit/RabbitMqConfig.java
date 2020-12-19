@@ -19,14 +19,14 @@ public class RabbitMqConfig implements Serializable {
   /**
    * RabbitMq 地址
    */
-  public static final String HOST = "49.233.5.107";
+  public static final String HOST = "192.168.48.129";
 
   /**
    * RabbitMq 端口
    */
-  public static final Integer PORT = 5672;
+  public static final Integer PORT = 5671;
 
-  public static final String USERNAME = "Xing";
+  public static final String USERNAME = "guest";
 
-  public static final String PASSWORD = "123456";
+  public static final String PASSWORD = "guest";
 }
