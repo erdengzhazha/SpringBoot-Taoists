@@ -12,6 +12,7 @@
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
         <module name="Java-Tool" />
+        <module name="SpringBoot-Redis" />
         <module name="order-server-manager" />
         <module name="SpringBoot-AOP" />
         <module name="order" />
@@ -54,6 +55,7 @@
       <module name="SpringBoot-Nacos-Demo01" options="-parameters" />
       <module name="SpringBoot-Netty" options="-parameters" />
       <module name="SpringBoot-RabbitMq" options="-parameters" />
+      <module name="SpringBoot-Redis" options="-parameters" />
       <module name="SpringBoot-Validated" options="-parameters" />
       <module name="SpringBoot-Zookeeper" options="-parameters" />
       <module name="SpringBoot-feign" options="-parameters" />

@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <properties>
-        <spring.version>2.2.10.RELEASE</spring.version>
+        <spring.version>2.2.12.RELEASE</spring.version>
         <lombok.version>1.18.12</lombok.version>
         <mybatis.plus.version>3.4.0</mybatis.plus.version>
         <mysql.driver.version>5.1.49</mysql.driver.version>
@@ -19,7 +19,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.10.RELEASE</version>
+        <version>2.2.12.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -38,6 +38,7 @@
         <module>SpringBoot-Zookeeper</module>
         <module>SpringBoot-Hystrix</module>
         <module>SpringBoot-HikariCP</module>
+        <module>SpringBoot-Redis</module>
     </modules>
 
 
