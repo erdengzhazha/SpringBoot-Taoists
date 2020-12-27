@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ovopark.tao.mp.mapper.CMainMapper">
+  <resultMap id="BaseResultMap" type="com.ovopark.tao.mp.entity.po.CMain">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="start1" jdbcType="DOUBLE" property="start1" />
+    <result column="start2" jdbcType="DOUBLE" property="start2" />
+    <result column="start3" jdbcType="DOUBLE" property="start3" />
+    <result column="total_num" jdbcType="INTEGER" property="totalNum" />
+    <result column="main_win" jdbcType="INTEGER" property="mainWin" />
+    <result column="main_flat" jdbcType="INTEGER" property="mainFlat" />
+    <result column="main_lose" jdbcType="INTEGER" property="mainLose" />
+    <result column="win_rate" jdbcType="DOUBLE" property="winRate" />
+    <result column="flat_rate" jdbcType="DOUBLE" property="flatRate" />
+    <result column="lose_rate" jdbcType="DOUBLE" property="loseRate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, company_name, start1, start2, start3, total_num, main_win, main_flat, main_lose, 
+    win_rate, flat_rate, lose_rate
+  </sql>
+  <select id="selectByExample" parameterType="com.ovopark.tao.mp.entity.po.CMainExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from c_main
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from c_main
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from c_main
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ovopark.tao.mp.entity.po.CMainExample">
+    delete from c_main
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ovopark.tao.mp.entity.po.CMain">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into c_main (company_name, start1, start2, 
+      start3, total_num, main_win, 
+      main_flat, main_lose, win_rate, 
+      flat_rate, lose_rate)
+    values (#{companyName,jdbcType=VARCHAR}, #{start1,jdbcType=DOUBLE}, #{start2,jdbcType=DOUBLE}, 
+      #{start3,jdbcType=DOUBLE}, #{totalNum,jdbcType=INTEGER}, #{mainWin,jdbcType=INTEGER}, 
+      #{mainFlat,jdbcType=INTEGER}, #{mainLose,jdbcType=INTEGER}, #{winRate,jdbcType=DOUBLE}, 
+      #{flatRate,jdbcType=DOUBLE}, #{loseRate,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ovopark.tao.mp.entity.po.CMain">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into c_main
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="start1 != null">
+        start1,
+      </if>
+      <if test="start2 != null">
+        start2,
+      </if>
+      <if test="start3 != null">
+        start3,
+      </if>
+      <if test="totalNum != null">
+        total_num,
+      </if>
+      <if test="mainWin != null">
+        main_win,
+      </if>
+      <if test="mainFlat != null">
+        main_flat,
+      </if>
+      <if test="mainLose != null">
+        main_lose,
+      </if>
+      <if test="winRate != null">
+        win_rate,
+      </if>
+      <if test="flatRate != null">
+        flat_rate,
+      </if>
+      <if test="loseRate != null">
+        lose_rate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="start1 != null">
+        #{start1,jdbcType=DOUBLE},
+      </if>
+      <if test="start2 != null">
+        #{start2,jdbcType=DOUBLE},
+      </if>
+      <if test="start3 != null">
+        #{start3,jdbcType=DOUBLE},
+      </if>
+      <if test="totalNum != null">
+        #{totalNum,jdbcType=INTEGER},
+      </if>
+      <if test="mainWin != null">
+        #{mainWin,jdbcType=INTEGER},
+      </if>
+      <if test="mainFlat != null">
+        #{mainFlat,jdbcType=INTEGER},
+      </if>
+      <if test="mainLose != null">
+        #{mainLose,jdbcType=INTEGER},
+      </if>
+      <if test="winRate != null">
+        #{winRate,jdbcType=DOUBLE},
+      </if>
+      <if test="flatRate != null">
+        #{flatRate,jdbcType=DOUBLE},
+      </if>
+      <if test="loseRate != null">
+        #{loseRate,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ovopark.tao.mp.entity.po.CMainExample" resultType="java.lang.Long">
+    select count(*) from c_main
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update c_main
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.companyName != null">
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.start1 != null">
+        start1 = #{record.start1,jdbcType=DOUBLE},
+      </if>
+      <if test="record.start2 != null">
+        start2 = #{record.start2,jdbcType=DOUBLE},
+      </if>
+      <if test="record.start3 != null">
+        start3 = #{record.start3,jdbcType=DOUBLE},
+      </if>
+      <if test="record.totalNum != null">
+        total_num = #{record.totalNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.mainWin != null">
+        main_win = #{record.mainWin,jdbcType=INTEGER},
+      </if>
+      <if test="record.mainFlat != null">
+        main_flat = #{record.mainFlat,jdbcType=INTEGER},
+      </if>
+      <if test="record.mainLose != null">
+        main_lose = #{record.mainLose,jdbcType=INTEGER},
+      </if>
+      <if test="record.winRate != null">
+        win_rate = #{record.winRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.flatRate != null">
+        flat_rate = #{record.flatRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.loseRate != null">
+        lose_rate = #{record.loseRate,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update c_main
+    set id = #{record.id,jdbcType=BIGINT},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      start1 = #{record.start1,jdbcType=DOUBLE},
+      start2 = #{record.start2,jdbcType=DOUBLE},
+      start3 = #{record.start3,jdbcType=DOUBLE},
+      total_num = #{record.totalNum,jdbcType=INTEGER},
+      main_win = #{record.mainWin,jdbcType=INTEGER},
+      main_flat = #{record.mainFlat,jdbcType=INTEGER},
+      main_lose = #{record.mainLose,jdbcType=INTEGER},
+      win_rate = #{record.winRate,jdbcType=DOUBLE},
+      flat_rate = #{record.flatRate,jdbcType=DOUBLE},
+      lose_rate = #{record.loseRate,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ovopark.tao.mp.entity.po.CMain">
+    update c_main
+    <set>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="start1 != null">
+        start1 = #{start1,jdbcType=DOUBLE},
+      </if>
+      <if test="start2 != null">
+        start2 = #{start2,jdbcType=DOUBLE},
+      </if>
+      <if test="start3 != null">
+        start3 = #{start3,jdbcType=DOUBLE},
+      </if>
+      <if test="totalNum != null">
+        total_num = #{totalNum,jdbcType=INTEGER},
+      </if>
+      <if test="mainWin != null">
+        main_win = #{mainWin,jdbcType=INTEGER},
+      </if>
+      <if test="mainFlat != null">
+        main_flat = #{mainFlat,jdbcType=INTEGER},
+      </if>
+      <if test="mainLose != null">
+        main_lose = #{mainLose,jdbcType=INTEGER},
+      </if>
+      <if test="winRate != null">
+        win_rate = #{winRate,jdbcType=DOUBLE},
+      </if>
+      <if test="flatRate != null">
+        flat_rate = #{flatRate,jdbcType=DOUBLE},
+      </if>
+      <if test="loseRate != null">
+        lose_rate = #{loseRate,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ovopark.tao.mp.entity.po.CMain">
+    update c_main
+    set company_name = #{companyName,jdbcType=VARCHAR},
+      start1 = #{start1,jdbcType=DOUBLE},
+      start2 = #{start2,jdbcType=DOUBLE},
+      start3 = #{start3,jdbcType=DOUBLE},
+      total_num = #{totalNum,jdbcType=INTEGER},
+      main_win = #{mainWin,jdbcType=INTEGER},
+      main_flat = #{mainFlat,jdbcType=INTEGER},
+      main_lose = #{mainLose,jdbcType=INTEGER},
+      win_rate = #{winRate,jdbcType=DOUBLE},
+      flat_rate = #{flatRate,jdbcType=DOUBLE},
+      lose_rate = #{loseRate,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

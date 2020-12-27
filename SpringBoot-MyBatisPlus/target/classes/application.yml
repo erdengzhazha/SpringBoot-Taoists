@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     # URL配置
-    url: jdbc:mysql://localhost:3306/my_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/caipiao?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
     type: com.zaxxer.hikari.HikariDataSource
@@ -14,7 +14,7 @@ spring:
       # 最小空闲连接数量
       minimum-idle: 5
       # 空闲连接存活最大时间，默认600000（10分钟）
-      idle-timeout: 180000
+      idle-timeout: 600000
       # 连接池最大连接数，默认是10
       maximum-pool-size: 10
       # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
@@ -25,7 +25,14 @@ spring:
       max-lifetime: 1800000
       # 数据库连接超时时间,默认30秒，即30000
       connection-timeout: 30000
-      connection-test-query: SELECT 1
+      # 如果您的驱动程序支持JDBC4，我们强烈建议不要设置此属性
+      # connection-test-query: SELECT 1
+      # 此属性控制从池返回的连接的默认事务隔离级别。
+      # 如果未指定此属性，则使用JDBC驱动程序定义的默认事务隔离级别。
+      # 仅当您具有所有查询通用的特定隔离要求时，才使用此属性。
+      # 此属性的值是从不断的名称Connection 类，
+      # 如TRANSACTION_READ_COMMITTED，TRANSACTION_REPEATABLE_READ等 默认值：驱动程序默认
+      # transactionIsolation:
 
 # mybatis-plus相关配置
 mybatis-plus:

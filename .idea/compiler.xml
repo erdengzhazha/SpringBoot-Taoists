@@ -11,28 +11,28 @@
         <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
-        <module name="Java-Tool" />
+        <module name="cloud-tool-rabbitmq" />
         <module name="SpringBoot-Redis" />
         <module name="order-server-manager" />
         <module name="SpringBoot-AOP" />
-        <module name="order" />
         <module name="SpringBoot-Netty" />
         <module name="user" />
-        <module name="nacos-spring-boot-discovery" />
+        <module name="order" />
         <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
         <module name="SpringBoot-Validated" />
-        <module name="SpringBoot-HikariCP" />
-        <module name="cloud-tool-rabbitmq" />
-        <module name="SpringBoot-feign" />
         <module name="DelayQueue" />
+        <module name="common" />
+        <module name="DelayQueueConsumer" />
+        <module name="SpringBoot-feign" />
+        <module name="Java-Tool" />
         <module name="SpringBoot-Hystrix" />
         <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="DelayQueue-Plugin" />
         <module name="SpringBoot-MVC" />
-        <module name="common" />
-        <module name="DelayQueueConsumer" />
+        <module name="SpringBoot-HikariCP" />
+        <module name="nacos-spring-boot-discovery" />
         <module name="SpringBoot-Zookeeper" />
       </profile>
     </annotationProcessing>
