@@ -1,0 +1,3 @@
+[16:01:19:590] [WARN] - MPApplicationTest.log4j2(MPApplicationTest.java:34) - warn level
+[16:01:19:591] [ERROR] - MPApplicationTest.log4j2(MPApplicationTest.java:35) - error message
+[16:01:19:592] [ERROR] - MPApplicationTest.log4j2(MPApplicationTest.java:37) - 字符串快捷拼接方式一:dsjkfadjlks,此方式比使用+号速度块！
