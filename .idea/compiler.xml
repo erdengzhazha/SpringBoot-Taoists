@@ -11,44 +11,33 @@
         <module name="design-patterns" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
-        <module name="SpringBoot-HikariCP" />
-        <module name="nacos-spring-boot-discovery" />
         <module name="DelayQueue" />
-        <module name="cloud-tool-rabbitmq" />
+        <module name="DelayQueueConsumer" />
         <module name="SpringBoot-Redis" />
         <module name="order-server-manager" />
         <module name="SpringBoot-AOP" />
-        <module name="order-server-manager" />
         <module name="SpringBoot-Netty" />
         <module name="user" />
         <module name="order" />
         <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
-        <module name="SpringBoot-Hystrix" />
         <module name="SpringBoot-Validated" />
-        <module name="DelayQueue" />
+        <module name="SpringBoot-HikariCP" />
+        <module name="common" />
         <module name="message-consumer" />
         <module name="cloud-tool-rabbitmq" />
         <module name="SpringBoot-feign" />
-        <module name="SpringBoot-Hystrix" />
-        <module name="DelayQueue" />
-        <module name="common" />
-        <module name="DelayQueueConsumer" />
-        <module name="SpringBoot-feign" />
         <module name="Java-Tool" />
-        <module name="SpringBoot-Netty" />
+        <module name="SpringBoot-Hystrix" />
         <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="DelayQueue-Plugin" />
         <module name="SpringBoot-Zookeeper" />
-        <module name="common" />
-        <module name="DelayQueueConsumer" />
-        <module name="SpringBoot-MVC" />
-        <module name="SpringBoot-HikariCP" />
+        <module name="SpringBoot-Kafka" />
         <module name="nacos-spring-boot-discovery" />
-        <module name="SpringBoot-Zookeeper" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -61,6 +50,7 @@
       <module name="SpringBoot-HikariCP" options="-parameters" />
       <module name="SpringBoot-Hystrix" options="-parameters" />
       <module name="SpringBoot-Java" options="-parameters" />
+      <module name="SpringBoot-Kafka" options="-parameters" />
       <module name="SpringBoot-MVC" options="-parameters" />
       <module name="SpringBoot-MongoDB" options="-parameters" />
       <module name="SpringBoot-MyBatisPlus" options="-parameters" />

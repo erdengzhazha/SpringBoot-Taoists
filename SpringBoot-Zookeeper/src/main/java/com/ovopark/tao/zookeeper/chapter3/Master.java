@@ -4,8 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
-
-import javax.jnlp.ClipboardService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

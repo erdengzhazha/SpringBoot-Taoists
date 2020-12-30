@@ -1,11 +1,7 @@
 package com.ovopark.tao.java.tool.random;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
-
-import static com.sun.tools.javac.jvm.ByteCodes.swap;
 
 /*** * http://www.qiusunzuo.com/
  *                     .::::. *       FUCK YOU     

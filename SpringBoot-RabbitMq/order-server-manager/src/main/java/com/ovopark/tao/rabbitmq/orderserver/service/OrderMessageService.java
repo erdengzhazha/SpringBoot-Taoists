@@ -1,6 +1,7 @@
 package com.ovopark.tao.rabbitmq.orderserver.service;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
+//import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
 import com.ovopark.tao.rabbitmq.common.config.rabbit.RabbitMqConfig;
 import com.ovopark.tao.rabbitmq.orderserver.entity.dto.OrderMessageDTO;
 import com.ovopark.tao.rabbitmq.orderserver.entity.enummeration.OrderStatusEnum;
