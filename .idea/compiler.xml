@@ -11,7 +11,7 @@
         <module name="design-patterns" />
         <module name="deliveryman-server-manager" />
         <module name="SpringBoot-MongoDB" />
-        <module name="Java-JUC" />
+        <module name="SpringBoot-HikariCP" />
         <module name="nacos-spring-boot-discovery" />
         <module name="DelayQueue" />
         <module name="cloud-tool-rabbitmq" />
@@ -24,10 +24,12 @@
         <module name="order" />
         <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
+        <module name="SpringBoot-Hystrix" />
         <module name="SpringBoot-Validated" />
-        <module name="SpringBoot-HikariCP" />
+        <module name="DelayQueue" />
         <module name="message-consumer" />
         <module name="cloud-tool-rabbitmq" />
+        <module name="SpringBoot-feign" />
         <module name="SpringBoot-Hystrix" />
         <module name="DelayQueue" />
         <module name="common" />
@@ -36,7 +38,7 @@
         <module name="Java-Tool" />
         <module name="SpringBoot-Netty" />
         <module name="SpringBoot-i18n" />
-        <module name="SpringBoot-feign" />
+        <module name="Java-JUC" />
         <module name="DelayQueue-Plugin" />
         <module name="SpringBoot-Zookeeper" />
         <module name="common" />

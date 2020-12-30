@@ -1,5 +1,7 @@
 package com.ovopark.tao.java.tool.random;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -28,7 +30,7 @@ import static com.sun.tools.javac.jvm.ByteCodes.swap;
 public class ChangeRandom {
 
   public static void main(String[] args) {
-    int len = 27;
+    int len = 30;
     int[] arr = new int[len];
     for(int i = 0;i<len;i++){
       arr[i] = i+1;
@@ -42,11 +44,11 @@ public class ChangeRandom {
       int i1 = new Random().nextInt(len);
       // 交换
       k = arr[i];
-      arr[i] = arr[arr[i1]%len];
-      arr[arr[i1]%len] = k;
+      arr[i] = arr[i1%len];
+      arr[i1%len] = k;
     }
+    System.out.println(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss sss").format(new Date()));
     print(arr);
-
   }
   public  static void print(int[] a){
     for(int i = 0;i<a.length;i++){
