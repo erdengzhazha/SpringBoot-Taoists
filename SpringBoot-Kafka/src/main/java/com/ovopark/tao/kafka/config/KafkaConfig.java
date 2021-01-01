@@ -21,7 +21,7 @@ import java.util.concurrent.CountDownLatch;
 
 /*** * http://www.qiusunzuo.com/
  *                     .::::. *       FUCK YOU     
- *                  .::::::::.  @Description 请填写类注释
+ *                  .::::::::.  @Description kafka配置
  *                 :::::::::::  @Auther Xiu_Er 13813641925@163.com
  *             ..:::::::::::'   @Date 2020/12/30 6:58 下午
  *           '::::::::::::'     @Version 1.0.0    

@@ -10,6 +10,7 @@
         <module name="SpringBoot-MVC" />
         <module name="design-patterns" />
         <module name="deliveryman-server-manager" />
+        <module name="nacos-spring-boot-config" />
         <module name="SpringBoot-MongoDB" />
         <module name="DelayQueue" />
         <module name="DelayQueueConsumer" />
@@ -20,8 +21,11 @@
         <module name="user" />
         <module name="order" />
         <module name="SpringBoot-MyBatisPlus" />
-        <module name="nacos-spring-boot-config" />
+        <module name="DelayQueueConsumer" />
         <module name="SpringBoot-Validated" />
+        <module name="DelayQueue" />
+        <module name="common" />
+        <module name="nacos-spring-boot-discovery" />
         <module name="SpringBoot-HikariCP" />
         <module name="common" />
         <module name="message-consumer" />
@@ -32,6 +36,9 @@
         <module name="SpringBoot-i18n" />
         <module name="Java-JUC" />
         <module name="DelayQueue-Plugin" />
+        <module name="SpringBoot-MVC" />
+        <module name="SpringBoot-HikariCP" />
+        <module name="JUC" />
         <module name="SpringBoot-Zookeeper" />
         <module name="SpringBoot-Kafka" />
         <module name="nacos-spring-boot-discovery" />
@@ -44,6 +51,7 @@
       <module name="DelayQueue" options="-parameters" />
       <module name="DelayQueue-Plugin" options="-parameters" />
       <module name="DelayQueueConsumer" options="-parameters" />
+      <module name="JUC" options="-parameters" />
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />
       <module name="SpringBoot-AOP" options="-parameters" />
