@@ -30,20 +30,17 @@ import javax.annotation.Resource;
  * ```` ':.          ':::::::::'                  ::::..
  *                    '.:::::'                    ':'````..
  */
-@SpringBootTest(classes = MyKafkaApplication.class)
+@SpringBootTest
 public class KafkaApplication {
 
-//  @Autowired
-//  private KafkaProperties.Listener listener;
-
-  @Resource(name = "kafkaTemplate")
+  @Autowired
   private KafkaTemplate<Integer, String> template;
 
   @Test
   public void testSimple() throws Exception {
-    template.send("annotated1", 0, "foo");
-    template.flush();
-    System.out.println("发送成功");
+//    template.send("topic1", 0, "{\"message\":\"雄起\",\"bussinesType\":\"push\",\"moduleKey\":\"device\",\"enterpriseId\":1084}");
+//    template.flush();
+//    System.out.println("发送成功");
 //    Thread.sleep(1000000);
   }
 
