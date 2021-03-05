@@ -7,20 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringBoot-MVC" />
-        <module name="design-patterns" />
+        <module name="DelayQueue" />
+        <module name="message-consumer" />
         <module name="deliveryman-server-manager" />
+        <module name="SpringBoot-MVC" />
+        <module name="cloud-tool-rabbitmq" />
         <module name="SpringBoot-MongoDB" />
         <module name="nacos-spring-boot-discovery" />
         <module name="SpringBoot-Redis" />
         <module name="DelayQueue" />
         <module name="SpringBoot-AOP" />
         <module name="SpringBoot-Kafka" />
-        <module name="SpringBoot-Netty" />
-        <module name="user" />
-        <module name="order" />
         <module name="order-server-manager" />
+        <module name="SpringBoot-i18n" />
+        <module name="order" />
+        <module name="SpringBoot-MyBatisPlus" />
         <module name="nacos-spring-boot-config" />
+        <module name="Java-Tool" />
+        <module name="SpringBoot-Validated" />
+        <module name="DelayQueueConsumer" />
+        <module name="SpringBoot-Hystrix" />
+        <module name="UML" />
         <module name="common" />
         <module name="SpringBoot-Validated" />
         <module name="SpringBoot-HikariCP" />
@@ -28,10 +35,15 @@
         <module name="message-consumer" />
         <module name="cloud-tool-rabbitmq" />
         <module name="SpringBoot-feign" />
-        <module name="Java-Tool" />
-        <module name="SpringBoot-Hystrix" />
-        <module name="SpringBoot-i18n" />
+        <module name="user" />
+        <module name="SpringBoot-Netty" />
+        <module name="SpringBoot-HikariCP" />
         <module name="Java-JUC" />
+        <module name="DelayQueue-Plugin" />
+        <module name="SpringBoot-Zookeeper" />
+        <module name="common" />
+        <module name="nacos-spring-boot-discovery" />
+        <module name="SpringBoot-MongoDB" />
         <module name="DelayQueueConsumer" />
         <module name="SpringBoot-MyBatisPlus" />
         <module name="SpringBoot-Zookeeper" />
@@ -65,6 +77,7 @@
       <module name="SpringBoot-Zookeeper" options="-parameters" />
       <module name="SpringBoot-feign" options="-parameters" />
       <module name="SpringBoot-i18n" options="-parameters" />
+      <module name="UML" options="-parameters" />
       <module name="cloud-tool-rabbitmq" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="deliveryman-server-manager" options="-parameters" />
