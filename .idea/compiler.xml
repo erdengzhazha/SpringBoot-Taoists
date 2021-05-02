@@ -7,47 +7,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DelayQueue" />
-        <module name="message-consumer" />
-        <module name="deliveryman-server-manager" />
-        <module name="SpringBoot-MVC" />
-        <module name="cloud-tool-rabbitmq" />
-        <module name="SpringBoot-MongoDB" />
-        <module name="nacos-spring-boot-discovery" />
-        <module name="SpringBoot-Redis" />
-        <module name="DelayQueue" />
-        <module name="SpringBoot-AOP" />
-        <module name="SpringBoot-Kafka" />
-        <module name="order-server-manager" />
-        <module name="SpringBoot-i18n" />
-        <module name="order" />
-        <module name="SpringBoot-MyBatisPlus" />
-        <module name="nacos-spring-boot-config" />
+        <module name="SpringBoot-Zookeeper" />
         <module name="Java-Tool" />
-        <module name="SpringBoot-Validated" />
-        <module name="DelayQueueConsumer" />
-        <module name="SpringBoot-Hystrix" />
-        <module name="UML" />
-        <module name="common" />
-        <module name="SpringBoot-Validated" />
-        <module name="SpringBoot-HikariCP" />
-        <module name="DelayQueue-Plugin" />
-        <module name="message-consumer" />
-        <module name="cloud-tool-rabbitmq" />
-        <module name="SpringBoot-feign" />
+        <module name="SpringBoot-Redis" />
+        <module name="SpringBoot-AOP" />
         <module name="user" />
-        <module name="SpringBoot-Netty" />
-        <module name="SpringBoot-HikariCP" />
         <module name="Java-JUC" />
-        <module name="DelayQueue-Plugin" />
-        <module name="SpringBoot-Zookeeper" />
-        <module name="common" />
         <module name="nacos-spring-boot-discovery" />
-        <module name="SpringBoot-MongoDB" />
-        <module name="DelayQueueConsumer" />
+        <module name="SpringBoot-Hystrix" />
+        <module name="DelayQueue" />
+        <module name="SpringBoot-Kafka" />
+        <module name="SpringBoot-feign" />
+        <module name="cloud-tool-rabbitmq" />
+        <module name="deliveryman-server-manager" />
+        <module name="order" />
+        <module name="SpringBoot-MVC" />
         <module name="SpringBoot-MyBatisPlus" />
-        <module name="SpringBoot-Zookeeper" />
+        <module name="common" />
         <module name="JUC" />
+        <module name="SpringBoot-HikariCP" />
+        <module name="SpringBoot-Netty" />
+        <module name="SpringBoot-MongoDB" />
+        <module name="SpringBoot-Validated" />
+        <module name="DelayQueue-Plugin" />
+        <module name="SpringBoot-i18n" />
+        <module name="UML" />
+        <module name="nacos-spring-boot-config" />
+        <module name="Java-IO" />
+        <module name="DelayQueueConsumer" />
+        <module name="message-consumer" />
+        <module name="order-server-manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
@@ -58,6 +47,7 @@
       <module name="DelayQueue-Plugin" options="-parameters" />
       <module name="DelayQueueConsumer" options="-parameters" />
       <module name="JUC" options="-parameters" />
+      <module name="Java-IO" options="-parameters" />
       <module name="Java-JUC" options="-parameters" />
       <module name="Java-Tool" options="-parameters" />
       <module name="SpringBoot-AOP" options="-parameters" />
